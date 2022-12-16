@@ -152,7 +152,7 @@ class BreastCancer extends Component {
                   onChange={this.handleChange} />
               </Form.Group>
             </Form.Row>
-            <Row>
+            {/* <Row>
               <Col>
                 <Button className='button1' theme="ROUNDED"
                   disabled={isLoading}
@@ -169,8 +169,13 @@ class BreastCancer extends Component {
                   Reset Prediction
                 </Button>
               </Col>
-            </Row>
+            </Row> */}
           </Form>
+          <Button className='button1' theme="ROUNDED"
+                  disabled={isLoading}
+                  onClick={!isLoading ? this.handlePredictClick : null}>
+                  {isLoading ? 'Making prediction' : 'Predict'}
+          </Button>
         </Content>
         {result === "" ? null :
           (<Row>

@@ -241,7 +241,7 @@ class HeartDisease extends Component {
                 </Form.Control>
               </Form.Group>
             </Form.Row>
-            <Row>
+            {/* <Row>
               <Col>
                 <Button
                   className='button1' theme="ROUNDED"
@@ -259,8 +259,13 @@ class HeartDisease extends Component {
                   Reset prediction
                 </Button>
               </Col>
-            </Row>
+            </Row> */}
           </Form>
+          <Button className='button1' theme="ROUNDED"
+                  disabled={isLoading}
+                  onClick={!isLoading ? this.handlePredictClick : null}>
+                  {isLoading ? 'Making prediction' : 'Predict'}
+          </Button>
           
         </Content>
         {result === "" ? null :
